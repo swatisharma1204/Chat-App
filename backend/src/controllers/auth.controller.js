@@ -29,7 +29,7 @@ export const signup = async (req, res) => {
     });
 
     if (newUser) {
-      //  generate the jwt (jsonwebtoken) token here
+      // generate the jwt (jsonwebtoken) token here
       generateToken(newUser._id, res);
       await newUser.save();
 
