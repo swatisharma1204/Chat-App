@@ -80,7 +80,7 @@ export const useAuthStore = create((set, get) => ({
     } finally {  
       set({ isUpdatingProfile: false });
     }
-  },
+  }, 
 
   connectSocket: () => {
     const { authUser } = get();
