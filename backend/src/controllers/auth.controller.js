@@ -29,7 +29,7 @@ export const signup = async (req, res) => {
     });
 
     if (newUser) {
-      //generate the jwt (jsonwebtoken) token here    
+      //generate the jwt  token here    
       generateToken(newUser._id, res); 
       await newUser.save();
 
@@ -78,7 +78,7 @@ export const login = async (req, res) => {
 
 export const logout = (req, res) => {
   try {
-    res.cookie("jwt", "", { maxAge: 0 });
+    res.cookie("jwt", "", { maxAge: 0 }); //max-age tells the browser to delete cookies immediately
     res.status(200).json({ message: "Logged out successfully" });
   } catch (error) {
     console.log("Error in logout controller", error.message);
